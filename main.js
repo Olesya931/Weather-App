@@ -1,7 +1,11 @@
 const key = '05f0d827dc5191cc155093b4e7a2f37f';
 const locationInput = document.querySelector(".location__input");
 
-//const weatherBlock = document.querySelector(".weather");
+const weatherBlock = document.querySelector(".weather");
+const locationBlock = document.querySelector(".location");
+const backBtn = document.querySelector(".header .icon");
+
+
 const temp = document.querySelector(".temp__number");
 const descr = document.querySelector(".weather__descr");
 const feelsLike = document.querySelector(".feels-like__temp");
@@ -16,21 +20,34 @@ locationInput.addEventListener('keyup',(e)=>{
         fetch(api)
         .then((response) => response.json())
         .then((data)=>{
-            console.log(data);
-            if (data.cod!==200){
-                alert(data.message);
-            }
-            ////
-            //weatherBlock.classList.remove('hide');
-            temp.innerHTML = Math.round(data.main.temp);
-            descr.innerHTML = data.weather[0].description;
-            feelsLike.innerHTML = Math.round(data.main.feels_like);
-            humidity.innerHTML = data.main.humidity;
-            city.innerHTML = data.name;
-            weatherIcon.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
-
+            showWeather(data);
         })
     }
+})
+
+function showWeather (data){
+    if (data.cod===200){
+        weatherBlock.classList.remove('hide');
+        locationBlock.classList.add('hide');
+        backBtn.style.display = "block";
+
+        temp.innerHTML = Math.round(data.main.temp);
+        descr.innerHTML = data.weather[0].description;
+        feelsLike.innerHTML = Math.round(data.main.feels_like);
+        humidity.innerHTML = data.main.humidity;
+        city.innerHTML = data.name;
+        weatherIcon.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
+    }
+    else{
+        alert(data.message);
+    }
+    
+}
+
+backBtn.addEventListener("click",()=>{
+    weatherBlock.classList.add('hide');
+    locationBlock.classList.remove('hide');
+    backBtn.style.display = "none";
 })
 
 
