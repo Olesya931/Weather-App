@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="wrapper">
+        <header class="header"><i class='bx bxs-left-arrow-alt icon'></i>Weather</header>
+        <section class="location">
+        <input class="location__input" type="text" placeholder="Enter a city name">
+        <div class="line"></div>
+        <button class="location__button">Get location</button>
+        </section>
+
+        <section class="weather hide">
+            <img src="" alt="weather icon" class="weather__icon">
+            <div class="weather__temp">
+                <span class="temp__number">25</span>
+                <span class="tem_deg">°C</span>
+            </div>
+            <div class="weather__descr">Sunny</div>
+
+            <div class="weather__location">
+                <i class="bx bx-map icon"></i>
+                <span class="location__city">Moscow</span>
+            </div>
+
+            <div class="weather__details">
+                <div class="column feels-like">
+                    <i class="bx bxs-thermometer icon"></i>
+                    <div class="details">
+                        <p>Feels like</p>
+                        <span class="feels-like__temp">25</span>°C
+                        <!-- <span class=""></span> -->
+                        
+                    </div>
+                </div>
+
+                <div class="column humidity">
+                    <i class="bx bxs-droplet-half icon"></i>
+                    <div class="details">
+                        <p>Humidity</p>      
+                        <span class="humidity__numb">84</span>%
+                        
+                    </div>
+                </div>
+
+
+
+            </div>
+
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+            <!-- <section>
+                <div class="weather__container">
+                    <div class="icon">
+                        <img src="" alt="" class="weather-icon">
+                    </div>
+                    <div class="location">
+                        <div class="city">New York, US</div>
+                        <div class="date">Thursday, Dec 26 2020</div>
+                    </div>
+                    <div class="current">
+                        <div class="temp">Temp: 25 <span>°C</span></div>
+                        <div class="weather">Weather: Sunny</div>
+                        <div class="temp-range">Temp Range: 10°C / 15°C</div>
+                    </div>
+                </div>
+            </section> -->
+
+    </div>
+    
+    <script src="main.js"></script>
+</body>
+</html>

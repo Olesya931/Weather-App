@@ -1,0 +1,269 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(to right bottom, #ea2c62, #120078);
+    font-family: Arial, sans-serif;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* color: white; */
+}
+
+button{
+    cursor: pointer;
+}
+
+/* .weather-container {
+    width: 80%;
+    margin: 0 auto;
+    
+} */
+
+.wrapper {
+    width: 400px;
+    /* background: url(./img/bg.jpg) no-repeat center; */
+    /* background: #120078; */
+    background: white;
+    background-size: cover;
+    border-radius: 10px;
+
+
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    padding: 15px;
+    font-weight: 500;
+    border-bottom: 1px solid #bfbfbf;
+    color: #5140b3;
+}
+
+/* .header .active{
+    font-size: 20px;
+    margin-left: 5px;
+} */
+
+.header .icon{
+    cursor: pointer;
+    
+    /* font-size: 0; */
+}
+
+.icon{
+    padding-right: 10px;
+    font-size: 25px;
+    color: #5140b3;
+}
+
+.location{
+    /* display: none; */
+    margin: 20px 30px;
+}
+
+.location__input, .location__button{
+    width: 100%;
+    height: 50px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    border-radius: 10px;
+}
+
+.location__input{
+    text-align: center;
+    border: 1px solid #bfbfbf;
+}
+
+.location__input:focus{
+    border: 2px solid #5140b3;
+}
+
+.location__button{
+    background:  #5140b3;
+    color: white;
+}
+
+.location .line{
+    height: 1px;
+    width: 100%;
+    background: #ccc;
+    margin: 25px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.location .line::after{
+    content: "or";
+    background: white;
+    padding: 0 15px;
+    color: #ccc;
+}
+
+.weather{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* display: none; */
+}
+
+.weather__icon{
+    max-width: 110px;
+}
+
+.weather__temp{
+    display: flex;
+    font-size: 70px;
+    font-weight: 500;
+    justify-content: center;
+}
+
+.weather__descr{
+    font-size: 20px;
+    text-align: center;
+    margin: 15px 20px;
+}
+
+.weather__location{
+    font-size: 20px;
+}
+
+.weather__details{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-between;
+    border-top: 1px solid #bfbfbf;
+}
+
+.column{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 0;
+}
+
+.feels-like{
+    border-right: 1px solid #bfbfbf;
+}
+
+.feels-like, .humidity{
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.hide {
+    display: none;
+}
+
+
+/* .top {
+    text-align: center;
+    z-index: 999;
+}
+
+.top h1 {
+    color: white;
+    line-height: 2;
+}
+
+.top input,
+.top button {
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+    padding: 10px;
+    margin-bottom: 5px;
+    outline: none;
+    border: none; 
+}
+
+.top input {
+    background-color: rgba(0,0,0,.5);
+    border-bottom: solid 2px green;
+    border-radius: 10px 0 10px 0;
+    text-align: center;
+    font-size: 14px;
+    color: white;
+}
+
+.top input:focus {
+    color: white;
+    font-size: 15px;
+}
+
+.top input::placeholder {
+    color: rgba(255,255,255.5);
+}
+
+.top button {
+    background-color: #db6400;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.top button:hover {
+    background-color: #b05102;
+}
+
+.top .error {
+    color: white;
+    font-size: 14px;
+}
+
+.icon {
+    text-align: center;
+    padding-top: 15px;
+}
+
+.location {
+    padding-bottom: 15px;
+    text-align: center;
+    color: white;
+    line-height: 1.6;
+}
+
+.location .city {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.current {
+    width: 100%;
+    position: relative;
+    padding-top: 10px;
+    color: white;
+    text-align: left;
+}
+
+.current::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: white;
+}
+
+.current > * {
+    padding-bottom: 10px;
+} */
+
