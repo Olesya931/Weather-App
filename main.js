@@ -4,6 +4,7 @@ const locationInput = document.querySelector(".location__input");
 const weatherBlock = document.querySelector(".weather");
 const locationBlock = document.querySelector(".location");
 const backBtn = document.querySelector(".header .icon");
+const locationBtn = document.querySelector(".location__button");
 
 
 const temp = document.querySelector(".temp__number");
@@ -13,20 +14,31 @@ const humidity = document.querySelector(".humidity__numb");
 const city = document.querySelector(".location__city");
 const weatherIcon = document.querySelector(".weather__icon");
 
+let api;
+
 
 locationInput.addEventListener('keyup',(e)=>{
     if(locationInput.value != "" && e.key == "Enter"){
-        let api  = `https://api.openweathermap.org/data/2.5/weather?q=${locationInput.value}&units=metric&appid=${key}`
-        fetch(api)
-        .then((response) => response.json())
-        .then((data)=>{
-            showWeather(data);
-        })
+        api  = `https://api.openweathermap.org/data/2.5/weather?q=${locationInput.value}&units=metric&appid=${key}`;
+        showWeather(api);
     }
 })
 
-function showWeather (data){
-    if (data.cod===200){
+locationBtn.addEventListener("click",()=>{
+    navigator.geolocation.getCurrentPosition((success)=>{
+        console.log(success.coords.latitude, success.coords.longitude);
+        api = `https://api.openweathermap.org/data/2.5/weather?lat=${success.coords.latitude}&lon=${success.coords.longitude}&units=metric&appid=${key}`;
+        showWeather(api);
+    })
+})
+
+
+
+function showWeather (api){
+    fetch(api)
+    .then((response) => response.json())
+    .then((data)=>{   
+        if (data.cod===200){
         weatherBlock.classList.remove('hide');
         locationBlock.classList.add('hide');
         backBtn.style.display = "block";
@@ -39,8 +51,10 @@ function showWeather (data){
         weatherIcon.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
     }
     else{
-        alert(data.message);
-    }
+            alert(data.message);
+        }
+    })
+
     
 }
 
@@ -50,11 +64,6 @@ backBtn.addEventListener("click",()=>{
     backBtn.style.display = "none";
 })
 
-
-
-// navigator.geolocation.getCurrentPosition((success)=>{
-//     console.log(success);
-// })
 
 
 
